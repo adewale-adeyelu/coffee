@@ -11,7 +11,7 @@ const Navbar = () => {
     const [open, setOpen] = useState(false);
     return (
         <header className="fixed top-0 w-full z-50">
-            <div className="bg-[#7D2C0F] text-white flex justify-center items-center gap-2 py-1">
+            <div className="bg-[#7D2C0F] text-white flex justify-center items-center gap-2 py-2 md:py-1">
                 <Image src={NavImg} alt="Coffee" width={24} height={24} className="object-cover"/>
                 <p className="text-sm flex font-semibold">
                     Buy one coffee, get one free <span className="hidden md:block ps-2 pe-4"> - this week only discount</span>
