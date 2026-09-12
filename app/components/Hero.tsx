@@ -1,9 +1,14 @@
+"use client"
+
 import Image from "next/image"; 
 import HeroCoffee from "../Img/Hero-coffee-2.jpg";
 import Coffee1 from "../Img/Coffee_Cup_2.jpg";
 import coffee2 from "../Img/Coffee_Cup_3.jpg";
 import coffee3 from "../Img/Coffee_Cup_4.jpg";
 import { HiSparkles } from "react-icons/hi";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const Hero = () => {
     const features = [
@@ -13,35 +18,44 @@ const Hero = () => {
         { text: "Cozy Space", color: "text-[#FF8342]" },
         { text: "Great Coffee", color: "text-white" },
     ];
+    useEffect(() => {
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100,
+        });
+    }, []);
     return (  
         <section>
             {/* first hero */}
             <div className="bg-[#FCE3D7] md:pt-28 lg:pt-22 flex flex-col justify-center items-center pt-42 px-5 md:px-0">
-                <div className="flex flex-col items-center">
-                    <h1 className="text-[#7D2C0F] text-2xl text-center tracking-wider leading-8 md:leading-10 md:text-4xl font-semibold md:pt-20">
-                        Morning Gets Started
-                        <br />
-                        After A Coffee Sip
-                    </h1>
-                    <h6 className="text-[#7D2C0F] text-sm text-center tracking-wide font-medium leading-5 pt-3">
-                        At Myno Coffe, we believe coffee is more than a drink,
-                        <br className="hidden md:block" /> 
-                        it is an experience and we source premium beans
-                        <br className="hidden md:block" /> 
-                        perfect for your taste buds
-                    </h6>
-                    <div className="pt-5 flex items-center space-x-3">
-                        <a href="#about" className="bg-[#7D2C0F] cursor-pointer text-white rounded-3xl px-4 py-2">
-                            Explore Menu
-                        </a>
+                <div data-aos="zoom-in">
+                    <div className="flex flex-col items-center">
+                        <h1 className="text-[#7D2C0F] text-2xl text-center tracking-wider leading-8 md:leading-10 md:text-4xl font-semibold md:pt-20">
+                            Morning Gets Started
+                            <br />
+                            After A Coffee Sip
+                        </h1>
+                        <h6 className="text-[#7D2C0F] text-sm text-center tracking-wide font-medium leading-5 pt-3">
+                            At Myno Coffe, we believe coffee is more than a drink,
+                            <br className="hidden md:block" /> 
+                            it is an experience and we source premium beans
+                            <br className="hidden md:block" /> 
+                            perfect for your taste buds
+                        </h6>
+                        <div className="pt-5 flex items-center space-x-3">
+                            <a href="#about" className="bg-[#7D2C0F] cursor-pointer text-white rounded-3xl px-4 py-2">
+                                Explore Menu
+                            </a>
 
-                        <a href="#" className="bg-[#FF8342] cursor-pointer text-white rounded-3xl px-4 py-2">
-                            Grab Yours
-                        </a>
+                            <a href="#" className="bg-[#FF8342] cursor-pointer text-white rounded-3xl px-4 py-2">
+                                Grab Yours
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div className="-mt-20 md:-mt-36">
-                    <Image src={HeroCoffee} alt="coffee" className="w-[400px] md:w-[600px] h-[400px] md:h-[600px]" />
+                    <div className="-mt-20 md:-mt-36">
+                        <Image src={HeroCoffee} alt="coffee" className="w-[400px] md:w-[600px] h-[400px] md:h-[600px]" />
+                    </div>
                 </div>
             </div>
 
@@ -66,13 +80,13 @@ const Hero = () => {
 
             {/* third hero */}
             <div className="bg-[#FCE3D7] md:py-28 lg:py-10 flex flex-col justify-center items-center py-16 px-5 md:px-0">
-                <h1 className="text-[#7D2C0F] text-2xl text-center tracking-wider leading-8 md:leading-10 md:text-4xl font-semibold md:pt-4">
+                <h1 className="text-[#7D2C0F] text-2xl text-center tracking-wider leading-8 md:leading-10 md:text-4xl font-semibold md:pt-4" data-aos="fade-up">
                     Find The Perfect Tastes
                     <br />
                     That Suits You
                 </h1>
                 <div className="grid md:grid-cols-3 gap-10 items-center pt-10">
-                    <div className="flex flex-col items-center">
+                    <div className="flex flex-col items-center" data-aos="fade-up" data-aos-delay="100">
                         <div className="relative w-50 h-50 bg-[#7D2C0F] rounded-full overflow-hidden flex justify-center items-end">
                             <Image src={Coffee1} alt="coffee" className="w-full h-auto object-contain translate-y-2 scale-100" />
                         </div>
@@ -81,7 +95,7 @@ const Hero = () => {
                         </p>
                     </div>
                     
-                    <div className="flex flex-col items-center">
+                    <div className="flex flex-col items-center" data-aos="fade-up" data-aos-delay="200">
                         <div className="relative w-50 h-50 bg-[#7D2C0F] rounded-full overflow-hidden flex justify-center items-end">
                             <Image src={coffee2} alt="coffee" className="w-full h-auto object-contain translate-y-2 scale-100"/>
                         </div>
@@ -89,7 +103,7 @@ const Hero = () => {
                             Milk
                         </p>
                     </div>
-                    <div className="flex flex-col items-center">
+                    <div className="flex flex-col items-center" data-aos="fade-up" data-aos-delay="300">
                         <div className="relative w-50 h-50 bg-[#7D2C0F] rounded-full overflow-hidden flex justify-center items-end">
                             <Image src={coffee3} alt="coffee" className="w-full h-auto object-contain translate-y-2 scale-100" />
                         </div>

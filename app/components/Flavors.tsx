@@ -1,3 +1,8 @@
+"use client"
+
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 import Image from "next/image";
 import coffee1 from "../Img/Coffee_Cup_13.jpg";
 import coffee2 from "../Img/Coffee_Cup_14.jpg";
@@ -13,19 +18,26 @@ const Flavors = () => {
         { text: "Cozy Space", color: "text-[#FF8342]" },
         { text: "Great Coffee", color: "text-white" },
     ];
+    useEffect(() => {
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100,
+        });
+    }, []);
     return (  
         <section className="bg-[#EDCCC0]" id="blog">
             {/* first about */}
             <div className="px-4 md:px-10 lg:px-16 py-10 md:py-16">
-                <h1 className="text-[#7D2C0F] text-2xl text-center md:text-3xl font-bold">
+                <h1 className="text-[#7D2C0F] text-2xl text-center md:text-3xl font-bold" data-aos="fade-up">
                     New Flavors, Same Cozy Vibes
                 </h1>
-                <p className="text-[#7D2C0F] text-center mt-2 text-md">
+                <p className="text-[#7D2C0F] text-center mt-2 text-md" data-aos="fade-up">
                     Discover our latest brews and seasonal favorites.
                 </p>
                 <div className="grid md:grid-cols-3 gap-10 md:gap-8 items-center pt-10">
                     {/* grid 1 */}
-                    <div>
+                    <div data-aos="fade-up" data-aos-delay="100">
                         <Image src={coffee1} alt="coffee"/>
                         <div className="space-y-1 mt-3">
                             <p className="text-[#7D2C0F] font-medium text-sm">
@@ -42,7 +54,7 @@ const Flavors = () => {
                     </div>
 
                     {/* grid 2 */}
-                    <div>
+                    <div data-aos="fade-up" data-aos-delay="200">
                         <Image src={coffee2} alt="coffee"/>
                         <div className="space-y-1 mt-3">
                             <p className="text-[#7D2C0F] font-medium text-sm">
@@ -59,7 +71,7 @@ const Flavors = () => {
                     </div>
 
                     {/* grid 3 */}
-                    <div>
+                    <div data-aos="fade-up" data-aos-delay="300">
                         <Image src={coffee3} alt="coffee"/>
                         <div className="space-y-1 mt-3">
                             <p className="text-[#7D2C0F] font-medium text-sm">
@@ -76,7 +88,7 @@ const Flavors = () => {
                     </div>
                 </div>
 
-                <div className="text-center mt-16 md:mt-16">
+                <div className="text-center mt-16 md:mt-16" data-aos="fade-up" data-aos-delay="100">
                     <a href="#" className="bg-[#7D2C0F] cursor-pointer text-white rounded-3xl px-5 py-3">
                         View All
                     </a>
@@ -104,15 +116,17 @@ const Flavors = () => {
 
             {/* third about */}
             <div className="flex flex-col justify-center items-center py-13 md:py-20">
-                <Image src={coffee4} alt="coffee" />
+                <div data-aos="zoom-in" data-aos-delay="100">
+                    <Image src={coffee4} alt="coffee" />
+                </div>
 
-                <p className="text-[#7D2C0F] text-sm pt-3">
+                <p className="text-[#7D2C0F] text-sm pt-3" data-aos="fade-up" data-aos-delay="100">
                     Every day deserves a better cup of coffee, one that 
                     <br /> 
                     feels refreshing, indulgent, and made with intention.
                 </p>
 
-                <button className="bg-[#FF8342] text-white rounded-3xl px-3 py-1.5 mt-5 md:py-2">
+                <button className="bg-[#FF8342] text-white rounded-3xl px-4 py-1.5 mt-5 md:py-2" data-aos="fade-up" data-aos-delay="100">
                     <a href="#" className="text-md">
                         Order Now
                     </a>

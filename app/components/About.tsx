@@ -1,3 +1,8 @@
+"use client"
+
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 import Image from "next/image";
 import profile from "../Img/profile-img (2).jpg";
 import coffee1 from "../Img/Coffee_Cup_10.jpg";
@@ -5,18 +10,25 @@ import coffee2 from "../Img/Coffee_Cup_11.jpg";
 import coffee3 from "../Img/Coffee_Cup_12.jpg";
 
 const About = () => {
+    useEffect(() => {
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100,
+        });
+    }, []);
     return (  
         <section className="bg-[#FADED4] px-5 md:px-16 lg:px-20 py-10 md:py-13" id="about">
-            <h1 className="text-[#7D2C0F] text-2xl text-center md:text-3xl font-bold">
+            <h1 className="text-[#7D2C0F] text-2xl text-center md:text-3xl font-bold" data-aos="fade-up">
                 What People Love About Us
             </h1>
             <div className="grid lg:grid-cols-3 gap-8 md:gap-13 lg:gap-5 items-center pt-8 md:pt-13">
                 {/* grid-1 */}
                 <div className="flex flex-col space-y-4 items-center">
-                    <div className="bg-[#EDCCC0] py-4 w-full rounded-md px-5">
+                    <div className="bg-[#EDCCC0] py-4 w-full rounded-md px-5" data-aos="fade-down">
                         <p className="text-[#7d2c0f] text-md">
                             Every sip of Myno’s cold coffee is like a little
-                            <br />
+                            <br className="hidden md:block" />
                             joyful celebration. The rich aroma and
                             <br />
                             smooth velvety finish elevate my mornings,
@@ -32,17 +44,17 @@ const About = () => {
                             </p>
                         </div>
                     </div>
-                    <div>
+                    <div data-aos="fade-up">
                         <Image src={coffee1} alt="coffee" className="w-[350px] md:w-[700px] lg:w-[380px] h-70 md:h-90 lg:h-70" />
                     </div>
                 </div>
 
                 {/* grid-2 */}
                 <div className="flex flex-col-reverse lg:flex-col space-y-4 items-center">
-                    <div>
+                    <div data-aos="fade-down">
                         <Image src={coffee2} alt="coffee" className="w-[350px] md:w-[630px] lg:w-[370px] h-70 md:h-85 lg:h-70" />
                     </div>
-                    <div className="bg-[#EDCCC0] py-4 w-full rounded-md mb-4 lg:mb-0 px-5">
+                    <div className="bg-[#EDCCC0] py-4 w-full rounded-md mb-4 lg:mb-0 px-5" data-aos="fade-up">
                         <p className="text-[#7d2c0f] text-md">
                             I never knew cold coffee could be this
                             <br />
@@ -65,7 +77,7 @@ const About = () => {
 
                 {/* grid-3 */}
                 <div className="flex flex-col space-y-4 items-center">
-                    <div className="bg-[#EDCCC0] py-4 w-full rounded-md px-5">
+                    <div className="bg-[#EDCCC0] py-4 w-full rounded-md px-5" data-aos="fade-down">
                         <p className="text-[#7d2c0f] text-md">
                             Myno completely changed how I see cold
                             <br />
@@ -84,7 +96,7 @@ const About = () => {
                             </p>
                         </div>
                     </div>
-                    <div>
+                    <div data-aos="fade-up">
                         <Image src={coffee3} alt="coffee" className="w-[350px] md:w-[700px] lg:w-[380px] h-70 md:h-90 lg:h-70" />
                     </div>
                 </div>

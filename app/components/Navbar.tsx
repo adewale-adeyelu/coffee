@@ -58,7 +58,7 @@ const Navbar = () => {
                 <div onClick={() => setOpen(false)} className="fixed inset-0 bg-black/80 z-50 flex justify-center items-start pt-20">
                 
                     {/* Close button */}
-                    <button onClick={() => setOpen(false)} className="absolute top-10 right-5 text-[#7D2C0F] text-3xl">
+                    <button onClick={() => setOpen(false)} className="absolute top-12 right-5 text-[#7D2C0F] text-3xl">
                         <HiX />
                     </button>
 
