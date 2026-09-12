@@ -16,7 +16,7 @@ const Hero = () => {
     return (  
         <section>
             {/* first hero */}
-            <div className="bg-[#FCE3D7] md:pt-28 lg:pt-22 flex flex-col justify-center items-center pt-38 px-5 md:px-0">
+            <div className="bg-[#FCE3D7] md:pt-28 lg:pt-22 flex flex-col justify-center items-center pt-42 px-5 md:px-0">
                 <div className="flex flex-col items-center">
                     <h1 className="text-[#7D2C0F] text-2xl text-center tracking-wider leading-8 md:leading-10 md:text-4xl font-semibold md:pt-20">
                         Morning Gets Started

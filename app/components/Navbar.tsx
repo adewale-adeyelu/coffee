@@ -18,7 +18,7 @@ const Navbar = () => {
                 </p>
                 <Image src={NavImg} alt="Coffee" width={24} height={24} className="object-cover"/>
             </div>
-            <div className="bg-[#F7CCBD] py-2 px-4 md:px-10 flex justify-between items-center">
+            <div className="bg-[#F7CCBD] py-2.5 md:py-2 px-4 md:px-10 flex justify-between items-center">
                 <div className="space-x-2.5 hidden md:flex">
                     <a href="#about" className="text-[#7D2C0F] font-medium uppercase text-sm">
                         About
